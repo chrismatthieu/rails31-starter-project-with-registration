@@ -1,0 +1,16 @@
+<h1>Nutelo</h1>
+
+<% if @current_user %>
+	<%= @current_user.username %> | 
+
+	<% if @current_user.admin %>
+		<%= link_to 'users', '/users' %> |
+	<% end %>
+
+	<%= link_to 'logout', '/logout' %>
+
+<% else %>
+	<%= link_to 'register', new_user_path %> | 
+	<%= link_to 'login', '/login' %>
+<% end %>
+
